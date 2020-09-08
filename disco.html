@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <title>Disco de Cifrado</title>
+</head>
+<body>
+
+</body>
+  <script>
+var alphabet = "abcdefghijklmnopqrstuvwxyzæøå".split("");
+    
+function cipherAlphabet(alphabet, steps){
+    var copy = alphabet.slice();
+    var truncation = copy.splice(0,steps);
+    return copy.concat(truncation);
+}
+    
+var cAlphabet = cipherAlphabet(alphabet,4);
+    
+var svg = d3.select("body")
+.append("svg")
+.attr("height", 1000)
+.attr("width", 1000);
+    
+var r = 200;
+var p = Math.PI * 2;
+
+var group = svg.append("g")
+  .attr("transform", "translate(300,300)");
+
+var arc = d3.arc()
+  .innerRadius(r - 50)
+  .outerRadius(r)
+  .endAngle(p);
+
+var arcInner = d3.arc()
+  .innerRadius(r - 120)
+  .outerRadius(r - 60)
+  .endAngle(p);
+    
+var pie = d3.pie()
+  .sort(null)
+  .value(function(d) {
+    return 1;
+  });
+var arcs = group.selectAll(".arc")
+  .data(pie(alphabet))
+  .enter()
+  .append("path")
+  .attr("class", "arc")
+  .attr("id", function(d,i){
+    return "arc" + i;
+  })
+  .attr("d", arc)
+  .style("fill", function(d) {
+    if(d.data === "a"){
+      return "grey";
+    } else {
+      return "black";
+    }
+  })
+  .style('stroke','white')
+  .style('stroke-width','1.5px'); 
+
+group.selectAll(".arcText")
+  .data(alphabet)
+  .enter()
+  .append("text")
+  .attr("text-anchor", "middle")
+  .attr("font-size", "40")
+  .attr("x", 25)
+  .attr("dy", 35)
+  .attr("fill", "white")
+  .style('stroke','grey')
+  .style('stroke-width','0.3px')
+  .attr("class", "arcText")
+  .append("textPath")
+  .attr("xlink:href",function(d,i){return "#arc"+i;})
+  .text(function(d){
+  return d
+})
+
+var arcs = group.selectAll(".arcInner")
+  .data(pie(cAlphabet))
+  .enter()
+  .append("path")
+    .attr("class", "arcInner")
+  .attr("id", function(d,i){
+    return "arcInner" + i;
+  })
+  .attr("d", arcInner)
+  .style("fill", function(d) {
+    if(d.data === "a"){
+      return "darkgrey";
+    } else {
+      return "black";
+    }
+  })
+  .style('stroke','white')
+  .style('stroke-width','1.5px'); 
+
+group.selectAll(".arcInnerText")
+  .data(cAlphabet)
+  .enter()
+  .append("text")
+  .attr("text-anchor", "middle")
+  .attr("font-size", "28")
+  .attr("x", 17)
+  .attr("dy", 30)
+  .attr("fill", "white")
+  .attr("class", "arcInnerText")
+  .style('stroke','grey')
+  .style('stroke-width','0.3px')
+  .append("textPath")
+  .attr("xlink:href",function(d,i){return "#arcInner" + i})
+  .text(function(d){
+  return d
+})
+
+
+  </script>
+</html>

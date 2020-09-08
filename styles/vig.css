@@ -1,77 +1,69 @@
 body{
-    margin: 10px;
-    background: wheat;
-  }
-  
-  input:required:invalid {
-    border: 1px solid red;
-  }
-  
-  input:required:valid {
-    border: 1px solid green;
-  }
-  
-  .resultado{
-    padding-top: 20px;
-    padding-bottom: 10px;
-  }
-  
-  .img-ayuda{
-    /*width: 25px;*/
-    width: 30px;
-    position: relative;
-    top: -1px;
-  }
-  
-  header{
-    /*border: solid 1px;*/
-  }
-  
-  h1, h2{
-    font-family: lobster;
-  }
-  
-  main{
-    /*border: solid 1px;*/
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  
-  footer{
-    /*border: solid 1px;*/
-  }
-  
-  footer ul{
+    margin: 3%;
+    color: rgb(196,196,196);
+    background-image: url(https://lh6.googleusercontent.com/-72uowLfy8IM/Thb5aLI_yuI/AAAAAAAAANo/kujZMGik7PI/s800/bg.png);
+    background-color: wheat;
+    background-attachment: fixed;
+    background-repeat: repeat-x;
+    font-family: "Gruppo", sans-serif;
+}
+div.cage{
+    zoom: 1;
+    width: 90%;
+    overflow: hidden;
+    border: 1px solid cornflowerblue;
+    border-radius: 2em;
+    -moz-border-radius: 2em;
+    -webkit-border-radius: 2em;
+    color: rgb(255,255,255);
+    background-color: cadetblue;
+    box-shadow: 0 5px 15px aquamarine;
+    -moz-box-shadow: 0 5px 15px aquamarine;
+    -webkit-box-shadow: 0 5px 15px aquamarine;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    -ms-filter: "alpha(opacity=70)";
+    margin: 0 auto;
+    padding: 0.5em;
+}
+#inputField{
+    border: none;
+    width: 85%;
+    margin: 0 auto;
     text-align: center;
-  }
-  
-  footer ul li{
-    display: inline;
-    list-style: none;
-    margin-right: 20px;
-  }
-  
-  form{
+}
+.label{
+    text-align: left;
+    float: left;
+}
+.box{
+    width: 100%;
+    text-align: left;
+    float: right;
+}
+#enc{
+    margin-right: 10%;
+}
+input[type="text"]{
+    width: 100%;
     text-align: center;
-  }
-  
-  label{
-    margin-right: 15px;
-  }
-  
-  h1{
+    letter-spacing: 0.25em;
+    margin-bottom: 1em;
+}
+input[name="convert"]{
+    width: 50%;
+    height: 3em;
+}
+input[name="clearButton"]{
+    width: 30%;
+    height: 3em;
+}
+div.author{
     text-align: center;
-  }
-  
-  a::before{
-      font-family: fontawesome;
-      padding-right: 0.5em;
-  }
-  
-  a[href^="mailto:"]::before{
-      content: "\f0e0"
-  }
-  
-  a[href^="https://twitter.com"]::before{
-      content: "\f099"
-  }
+    margin: 1.5em auto;
+}
+hr{
+    width: 90%;
+    border: solid cornflowerblue;
+    border-width: 1px 0 0 0;
+}
