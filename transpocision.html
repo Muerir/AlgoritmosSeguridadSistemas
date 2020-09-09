@@ -8,7 +8,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
 		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    
 	<link rel="stylesheet" type="text/css" href="styles/banner.css">
 </head>
 
@@ -29,8 +30,8 @@
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="vigenere.html">Vigenere</a>
-					</li>
-					<li class="nav-item">
+                    </li>
+                    <li class="nav-item">
 						<a class="nav-link" href="transpocision.html">Transposición</a>
 					</li>
 					<li class="nav-item">
@@ -46,13 +47,13 @@
 		</div>
 		<div class="titulo">
 			<center>
-			  <h1><b>Algortimos de Sustitucion</b></h1>
+			  <h1><b>Algortimos de Transposición</b></h1>
 			</center>
 		  </div>
 	  </section>
 	<section>
 		<div class="container contaner-sustitucion">
-			<h1>Cifrado de Sustitucion</h1>
+			<h1>Cifrado de Transposición</h1>
 			<hr />
 			<div class="row">
 				<div class="col-md-12">
@@ -60,18 +61,45 @@
 						<label for="texto">Texto a cifrar:</label>
 						<textarea type="text" name="texto" id="texto" class="form-control"></textarea>
 					</div>
-				</div>
-				<div class="col-md-12">
+                </div>
+                <div class="col-md-12">
 					<div class="form-group">
-						<label for="desplazamiento">Desplazamiento:</label>
-						<input type="range" min="1" max="25" step="1" value="1" id="desplazamiento"
-							name="desplazamiento" class="form-control">
+						<label for="key">Llave:</label>
+						<input type="text" name="key" id="key" class="form-control">
 					</div>
 				</div>
 				<div class="col-md-12">
 					<div class="form-group">
 						<label for="cifrado">Texto cifrado:</label>
 						<textarea type="text" name="cifrado" id="cifrado" class="form-control"
+							disabled="disabled"></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+    </section>
+    
+    <section>
+		<div class="container contaner-sustitucion">
+			<h1>Descifrado de Transposición</h1>
+			<hr />
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="textoD">Texto a descifrar:</label>
+						<textarea type="text" name="textoD" id="textoD" class="form-control"></textarea>
+					</div>
+                </div>
+                <div class="col-md-12">
+					<div class="form-group">
+						<label for="keyD">Llave:</label>
+						<input type="text" name="keyD" id="keyD" class="form-control">
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="cifradoD">Texto descifrado:</label>
+						<textarea type="text" name="cifradoD" id="cifradoD" class="form-control"
 							disabled="disabled"></textarea>
 					</div>
 				</div>
@@ -90,8 +118,8 @@
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<script>
 		AOS.init();
-	</script>
-	<script type="text/javascript" src="js/sustitucion.js"></script>
+    </script>
+    <script src="js/transposition.js"></script>
 </body>
 
 </html>

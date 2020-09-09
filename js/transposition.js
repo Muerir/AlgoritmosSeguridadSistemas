@@ -1,3 +1,10 @@
+var llave = document.getElementById("key");
+var cifrado = document.getElementById("texto");
+var textoCifrado = document.getElementById("cifrado");
+var llaveD = document.getElementById("keyD");
+var cifradoD = document.getElementById("textoD");
+var textoCifradoD = document.getElementById("cifradoD");
+
 //Obtención del valor del alfabeto
 function letterValue(letter){
     return letter.toLowerCase().charCodeAt(0) - 96;
@@ -98,15 +105,13 @@ function transpositionDecipher(text,key){
     
     
     var min = order.indexOf(Math.min(...order));
-    console.log(lined)
-    console.log(min)
     for(var i = 0; i < keyLength;i++){
-        console.log(min)
         for(var j=0; j<Math.ceil(textSpaceless.length/key.length); j++){
-                console.log(min, j);
-                lined[j][min] = lines[i][j].toString();;         
+            try{
+                lined[j][min] = lines[i][j].toString();;
+            }
+            catch(e){}
         }
-        console.log(lined);
         order[min] = 1000;
         min = order.indexOf(Math.min(...order));
     }
@@ -119,6 +124,32 @@ function transpositionDecipher(text,key){
    return cipher;
 }
 
-console.log(transpositionCipher("WE ARE DISCOVERED. FLEE AT ONCE.","zebras"))
+/*console.log(transpositionCipher("WE ARE DISCOVERED. FLEE AT ONCE.","zebras"))
 console.log(transpositionDecipher(transpositionCipher("WE ARE DISCOVERED. FLEE AT ONCE.","zebras"), "zebras"))
 console.log(transpositionDecipher("gosq aomt icen msoa", "hola"));
+*/
+llave.addEventListener("keyup",function(){
+    if(llave.value != ""){
+        textoCifrado.value = transpositionCipher(cifrado.value,llave.value);
+    }
+    
+})
+cifrado.addEventListener("keyup",function(){
+    if(llave.value != ""){
+        textoCifrado.value = transpositionCipher(cifrado.value,llave.value);
+    }
+})
+
+llaveD.addEventListener("keyup",function(){
+    if(llaveD.value != ""){
+        textoCifradoD.value = transpositionDecipher(cifradoD.value,llaveD.value);
+    }
+    
+})
+cifradoD.addEventListener("keyup",function(){
+    if(llaveD.value != ""){
+        textoCifradoD.value = transpositionDecipher(cifradoD.value,llaveD.value);
+    }
+})
+
+
