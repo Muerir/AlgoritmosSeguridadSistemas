@@ -1,35 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<title>Cifrado Sustitucion</title>
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+	<link rel="stylesheet" type="text/css" href="styles/banner.css">
 </head>
-<body>
-	<div class="container">
-		<h1>Cifrado de Sustitucion</h1>
-		<hr/>
-		<div class="row">
-			<div class="col-md-12">
-				<div class="form-group">
-					<label for="texto">Texto a cifrar:</label>
-					<textarea type="text" name="texto" id="texto" class="form-control"></textarea>
-				</div>
+
+<body class="contaner-sustitucion">
+	<header>
+		<nav class="navbar1 navbar navbar-expand-lg navbar-light bg-light fixed-top">
+			<a class="navbar-brand" href="index.html">Seguridad de Sistemas</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="sustitucion.html">Sustitucion <span
+								class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="vigenere.html">Vigenere</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="disco.html">Disco de Cifrado</a>
+					</li>
+				</ul>
 			</div>
-			<div class="col-md-12">
-				<div class="form-group">
-					<label for="desplazamiento">Desplazamiento:</label>
-					<input type="range" min="1" max="25" step="1" value="1" id="desplazamiento" name="desplazamiento" class="form-control">
+		</nav>
+	</header>
+	<section>
+		<div class="banner1">
+			
+		</div>
+		<div class="titulo">
+			<center>
+			  <h1><b>Algortimos de Sustitucion</b></h1>
+			</center>
+		  </div>
+	  </section>
+	<section>
+		<div class="container contaner-sustitucion">
+			<h1>Cifrado de Sustitucion</h1>
+			<hr />
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="texto">Texto a cifrar:</label>
+						<textarea type="text" name="texto" id="texto" class="form-control"></textarea>
+					</div>
 				</div>
-			</div>
-			<div class="col-md-12">
-				<div class="form-group">
-					<label for="cifrado">Texto cifrado:</label>
-					<textarea type="text" name="cifrado" id="cifrado" class="form-control" disabled="disabled"></textarea>
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="desplazamiento">Desplazamiento:</label>
+						<input type="range" min="1" max="25" step="1" value="1" id="desplazamiento"
+							name="desplazamiento" class="form-control">
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="cifrado">Texto cifrado:</label>
+						<textarea type="text" name="cifrado" id="cifrado" class="form-control"
+							disabled="disabled"></textarea>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
+
+
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
 	<script type="text/javascript" src="js/sustitucion.js"></script>
 </body>
+
 </html>

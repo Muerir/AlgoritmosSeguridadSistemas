@@ -1,0 +1,34 @@
+.banner{
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../Imagenes/1.jpg");
+}
+.banner1{
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../Imagenes/sustitucion.jpg");
+    opacity: 0.2;
+ 
+}
+.titulo{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
+    padding: 20px;
+    width: 80%;
+    text-align: center;
+    background-color: transparent;
+    color: black;
+    font-weight: bolder;
+    margin: auto;
+    opacity: 1;
+}
