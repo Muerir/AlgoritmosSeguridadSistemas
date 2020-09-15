@@ -2,6 +2,7 @@
 const desplazamiento = document.getElementById("desplazamiento");
 const texto = document.getElementById("texto");
 const textoCifrado = document.getElementById("cifrado");
+const valor = document.getElementById("demo");
 // --- #Variables sacadas del html ---
 
 function cifrado(){
@@ -27,3 +28,7 @@ function cifrado(){
 }
 texto.addEventListener("keyup",cifrado);
 desplazamiento.addEventListener("change", cifrado);
+valor.innerHTML = desplazamiento.value;
+desplazamiento.oninput = function() {
+	valor.innerHTML = this.value;
+  }
