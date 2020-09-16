@@ -9,15 +9,15 @@ function cifrado(){
 
 	const textoIngresado = texto.value;  // valor del texto ingresado
 	textoCifrado.value = textoIngresado.split('').map(c=>{
-		let mayus = (c === c.toUpperCase()) ? true : false;
-        let valorEntero = c.toLowerCase().charCodeAt(0);
+		let mayus = (c === c.toUpperCase()) ? true : false; // Se queda con los valores en mayúscula
+        let valorEntero = c.toLowerCase().charCodeAt(0); // Busca el valor en ASCII
         
 		if(valorEntero >= 97 && valorEntero <= 122)
 			{
 				const valorDesplazamiento = parseInt(desplazamiento.value);
 				
 				if(valorEntero + valorDesplazamiento > 122)
-					valorEntero = 97 + (valorEntero - 122) + valorDesplazamiento - 1;
+					valorEntero = 97 + (valorEntero - 122) + valorDesplazamiento - 1; // Aquí se desplaza el valor para Cifrar
 				else
 					valorEntero = valorEntero + valorDesplazamiento;
 			}
@@ -26,9 +26,9 @@ function cifrado(){
 			return mayus ? cifrado.toUpperCase() : cifrado;
 		}).join('');
 }
-texto.addEventListener("keyup",cifrado);
+texto.addEventListener("keyup",cifrado);// Aquí se acciona el cifrado
 desplazamiento.addEventListener("change", cifrado);
 valor.innerHTML = desplazamiento.value;
-desplazamiento.oninput = function() {
+desplazamiento.oninput = function() {// Aquí se desplaza el valor para cifrar
 	valor.innerHTML = this.value;
   }

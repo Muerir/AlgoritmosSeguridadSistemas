@@ -2,14 +2,14 @@ var addEvent = (document.addEventListener) ?
     function (elm,ev,cb) {elm.addEventListener(ev,cb,false);} : 
 function (elm,ev,cb) {elm.attachEvent("on"+ev, function(e){cb.call(elm, e);});};
 
-addEvent(window, "load", function init() {
+addEvent(window, "load", function init() { // Generacion del cifrado
     var formField = document.getElementById("encdecForm");
     var inputs = formField.getElementsByTagName("input");
     addEvent(formField, "submit", function (evt) {
         (evt.preventDefault) ? evt.preventDefault() : evt.returnValue=false;
         var values = DomController.getValues(inputs);
         if (!values.flg) {DomController.setResult("( N/A )"); return false;}
-        var isEncrypt = DomController.checkRadio(inputs);
+        var isEncrypt = DomController.checkRadio(inputs); // Se manda para verificar si es cifrado o descifrado
         var ipLength = values.ip.length;
         var keyLength = values.key.length;
         while (ipLength > keyLength) {
@@ -21,15 +21,15 @@ addEvent(window, "load", function init() {
             _2 = VigenereAlgorithm.assign(values.key.charAt(s));
             _3 = VigenereAlgorithm[isEncrypt](_1, _2);
 
-            result += VigenereAlgorithm.assign(_3);
+            result += VigenereAlgorithm.assign(_3);// se entrega el valor cifrado o descifrado
         }
         if (result == -1) {DomController.setResult("Error Occur"); return false;}
-        DomController.setResult(result);
+        DomController.setResult(result); // se manda el valor resultado
     });
 });
 
 var DomController = {
-    getValues : function (inputs) {
+    getValues : function (inputs) { // se obtiene el valor del mensaje y la clave
         var values = {};
         values.flg = true;
         for (var i=0, l=inputs.length; i<l; i++) {
@@ -47,14 +47,14 @@ var DomController = {
         }
         return values;
     },
-    checkRadio : function (inputs) {
+    checkRadio : function (inputs) {    // Función para ver si se quiere Cifrar y Descifrar
         for (var i=0, l=inputs.length; i<l; i++) {
             if (inputs[i].type === "radio" && inputs[i].checked) {
                 return inputs[i].value;
             }
         }
     },
-    setResult : function (str) {
+    setResult : function (str) { // Fijación del cifrado
         document.getElementById("result").value = str;
     }
 }
